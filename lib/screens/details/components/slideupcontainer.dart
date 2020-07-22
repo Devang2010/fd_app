@@ -40,60 +40,63 @@ class _SlideUpContainerState extends State<SlideUpContainer> {
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: ListView(
-                  shrinkWrap: true,
-                  padding: EdgeInsets.zero,
-                  children: <Widget>[
-                    Center(
-                      child: InkWell(
-                        child: Icon(icon),
-                        onTap: () {
-                          setState(() {
-                            if (_height == 450) {
-                              _height = widget.size.height - 250;
-                              icon = Icons.keyboard_arrow_down;
-                            } else {
-                              icon = Icons.keyboard_arrow_up;
-                              _height = 450;
-                            }
-                          });
-                        },
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // shrinkWrap: true,
+                    // padding: EdgeInsets.zero,
+                    children: <Widget>[
+                      Center(
+                        child: InkWell(
+                          child: Icon(icon),
+                          onTap: () {
+                            setState(() {
+                              if (_height == 450) {
+                                _height = widget.size.height - 250;
+                                icon = Icons.keyboard_arrow_down;
+                              } else {
+                                icon = Icons.keyboard_arrow_up;
+                                _height = 450;
+                              }
+                            });
+                          },
+                        ),
                       ),
-                    ),
-                    GenerWidget(),
-                    SizedBox(height: 10.0),
-                    Text(
-                      "Help Rainforest in India recover\nfrom fire",
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.w700,
+                      GenerWidget(),
+                      SizedBox(height: 10.0),
+                      Text(
+                        "Help Rainforest in India recover\nfrom fire",
+                        style: TextStyle(
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 10.0),
-                    Organiser(),
-                    SizedBox(height: 10.0),
-                    CustomDivider(),
-                    SizedBox(height: 10.0),
-                    TargetValue(),
-                    SizedBox(height: 20.0),
-                    RecentDonors(),
-                    SizedBox(height: 20.0),
-                    BuildTabbar(),
-                    SizedBox(height: 20.0),
-                    TopStory(),
-                    SizedBox(height: 30.0),
-                    Text(
-                      'Data data data data data data data data data'
-                      'data data data data data data data data data data'
-                      'data data data data data data data data data data'
-                      'data data data data data data data data data data'
-                      'data data data data data data data data data data'
-                      '\n\n\n'
-                      'data data data data data data data data data data'
-                      'data data data data data data data data data data'
-                      'data data data data data data data data data data',
-                    ),
-                  ],
+                      SizedBox(height: 10.0),
+                      Organiser(),
+                      SizedBox(height: 10.0),
+                      CustomDivider(),
+                      SizedBox(height: 10.0),
+                      TargetValue(),
+                      SizedBox(height: 20.0),
+                      RecentDonors(),
+                      SizedBox(height: 20.0),
+                      BuildTabbar(),
+                      SizedBox(height: 20.0),
+                      TopStory(),
+                      SizedBox(height: 30.0),
+                      Text(
+                        'Data data data data data data data data data'
+                        'data data data data data data data data data data'
+                        'data data data data data data data data data data'
+                        'data data data data data data data data data data'
+                        'data data data data data data data data data data'
+                        '\n\n\n'
+                        'data data data data data data data data data data'
+                        'data data data data data data data data data data'
+                        'data data data data data data data data data data',
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -113,6 +116,7 @@ class TopStory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // width: 50,
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 3.0),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey[400]),
