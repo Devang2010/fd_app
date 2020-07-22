@@ -1,3 +1,4 @@
+import 'package:fd_app/screens/payment/payment.dart';
 import 'package:flutter/material.dart';
 
 class DonateBody extends StatelessWidget {
@@ -41,7 +42,12 @@ class DonateBody extends StatelessWidget {
           ),
           Center(
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PaymentScreen(),
+                ),
+              ),
               color: Colors.black,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50.0)),
