@@ -14,19 +14,23 @@ class SlideUpContainer extends StatefulWidget {
 }
 
 class _SlideUpContainerState extends State<SlideUpContainer> {
+  double _height = 450;
+  IconData icon = Icons.keyboard_arrow_up;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 440,
+    return AnimatedContainer(
+      height: _height,
       width: widget.size.width,
       // color: Colors.red[100],
+      duration: Duration(milliseconds: 600),
       child: Stack(
         children: <Widget>[
           Positioned(
             top: 40,
-            child: Container(
-              height: 400,
+            child: AnimatedContainer(
+              height: _height,
               width: widget.size.width,
+              duration: Duration(milliseconds: 600),
               decoration: BoxDecoration(
                 color: Color(0xffeaecf9),
                 borderRadius: BorderRadius.only(
@@ -37,9 +41,25 @@ class _SlideUpContainerState extends State<SlideUpContainer> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: ListView(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
+                  shrinkWrap: true,
+                  padding: EdgeInsets.zero,
                   children: <Widget>[
-                    Center(child: Icon(Icons.linear_scale)),
+                    Center(
+                      child: InkWell(
+                        child: Icon(icon),
+                        onTap: () {
+                          setState(() {
+                            if (_height == 450) {
+                              _height = widget.size.height - 250;
+                              icon = Icons.keyboard_arrow_down;
+                            } else {
+                              icon = Icons.keyboard_arrow_up;
+                              _height = 450;
+                            }
+                          });
+                        },
+                      ),
+                    ),
                     GenerWidget(),
                     SizedBox(height: 10.0),
                     Text(
@@ -65,6 +85,10 @@ class _SlideUpContainerState extends State<SlideUpContainer> {
                     Text(
                       'Data data data data data data data data data'
                       'data data data data data data data data data data'
+                      'data data data data data data data data data data'
+                      'data data data data data data data data data data'
+                      'data data data data data data data data data data'
+                      '\n\n\n'
                       'data data data data data data data data data data'
                       'data data data data data data data data data data'
                       'data data data data data data data data data data',
