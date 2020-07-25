@@ -16,7 +16,7 @@ class GenerWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Text(
-            "Once",
+            "Life",
             style: TextStyle(color: Colors.grey[600]),
           ),
         ),
@@ -28,7 +28,7 @@ class GenerWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Text(
-            "data",
+            "Humanity",
             style: TextStyle(color: Colors.grey[600]),
           ),
         ),
