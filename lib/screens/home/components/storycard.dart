@@ -1,21 +1,33 @@
 import 'package:flutter/material.dart';
 
 class StoryCard extends StatelessWidget {
+  final List title, subtitle, tag1, tag2, image;
   const StoryCard({
     Key key,
+    this.title,
+    this.subtitle,
+    this.tag1,
+    this.tag2,
+    this.image,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.14,
+      height: size.width * 0.4,
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: 2,
         itemBuilder: (BuildContext context, int index) {
-          return BuildCard();
+          return BuildCard(
+            image: image[index],
+            tag1: tag1[index],
+            tag2: tag2[index],
+            title: title[index],
+            subtitle: subtitle[index],
+          );
         },
       ),
     );
@@ -23,34 +35,41 @@ class StoryCard extends StatelessWidget {
 }
 
 class BuildCard extends StatelessWidget {
+  final String title, subtitle, tag1, tag2, image;
   const BuildCard({
     Key key,
+    this.title,
+    this.subtitle,
+    this.tag1,
+    this.tag2,
+    this.image,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      // height: size.height * 0.16,
+      // height: size.height * 0.15,
       width: size.width - 50,
-      margin: EdgeInsets.only(left: 20.0, top: 10.0),
+      margin: EdgeInsets.only(left: 20.0, top: 0.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Container(
-            height: size.height * 0.15,
-            width: size.width * 0.2,
+            height: size.width * 0.35,
+            width: size.width * 0.22,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/img1.jpg'),
+                image: AssetImage(image),
                 fit: BoxFit.fill,
               ),
               borderRadius: BorderRadius.circular(22.0),
             ),
           ),
           Container(
-            // height: size.height * 0.14,
+            height: size.width * 0.35,
             width: size.width - 150,
+            padding: EdgeInsets.symmetric(vertical: 10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
@@ -66,7 +85,7 @@ class BuildCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Text(
-                          "Once",
+                          tag1,
                           style: TextStyle(color: Colors.grey[600]),
                         ),
                       ),
@@ -78,7 +97,7 @@ class BuildCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Text(
-                          "data",
+                          tag2,
                           style: TextStyle(color: Colors.grey[600]),
                         ),
                       ),
@@ -87,12 +106,11 @@ class BuildCard extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(
-                    "Once a tenent always a tenent.",
+                    title,
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
-                  subtitle:
-                      Text("Something has to be done before its get out "),
-                )
+                  subtitle: Text(subtitle),
+                ),
               ],
             ),
           ),
