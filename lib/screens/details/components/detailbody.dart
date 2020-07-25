@@ -17,13 +17,24 @@ class _DetailBodyState extends State<DetailBody> {
       children: <Widget>[
         BackImage(size: size),
         Positioned(
-          top: 60.0,
+          top: 50.0,
           left: 20.0,
           child: InkWell(
             onTap: () => Navigator.pop(context),
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.white,
+            child: Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(right: 10.0),
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  "Back",
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                )
+              ],
             ),
           ),
         ),
