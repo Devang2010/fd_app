@@ -14,7 +14,7 @@ class FloatingButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(30.0),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 18.0),
         child: Text(
           'START CAMPAIGN',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
