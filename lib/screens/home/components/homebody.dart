@@ -13,10 +13,10 @@ class HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
     List images = [
-      'assets/images/img4.jpg',
-      'assets/images/img3.jpg',
       'assets/images/img2.jpg',
       'assets/images/img1.jpg',
+      'assets/images/moon.jpg',
+      'assets/images/img4.jpg',
     ];
     return ListView(
       children: <Widget>[
@@ -38,8 +38,20 @@ class HomeBody extends StatelessWidget {
           title: stories[0].title,
           subtitle: stories[0].subtitle,
         ),
-        // StoryCard(),
-        // StoryCard(),
+        StoryCard(
+          image: stories[1].image,
+          tag1: stories[1].tag1,
+          tag2: stories[1].tag2,
+          title: stories[1].title,
+          subtitle: stories[1].subtitle,
+        ),
+        StoryCard(
+          image: stories[2].image,
+          tag1: stories[2].tag1,
+          tag2: stories[2].tag2,
+          title: stories[2].title,
+          subtitle: stories[2].subtitle,
+        ),
         SizedBox(height: 20.0),
         EventCard(),
         SizedBox(height: 20.0),
