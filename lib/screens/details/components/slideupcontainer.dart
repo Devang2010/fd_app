@@ -1,5 +1,6 @@
 import 'package:fd_app/screens/details/components/generwidget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SlideUpContainer extends StatefulWidget {
   const SlideUpContainer({
@@ -14,7 +15,7 @@ class SlideUpContainer extends StatefulWidget {
 }
 
 class _SlideUpContainerState extends State<SlideUpContainer> {
-  double _height = 450;
+  double _height = 380;
   IconData icon = Icons.keyboard_arrow_up;
   @override
   Widget build(BuildContext context) {
@@ -51,12 +52,12 @@ class _SlideUpContainerState extends State<SlideUpContainer> {
                           child: Icon(icon),
                           onTap: () {
                             setState(() {
-                              if (_height == 450) {
-                                _height = widget.size.height - 250;
+                              if (_height == 380) {
+                                _height = widget.size.height - 70;
                                 icon = Icons.keyboard_arrow_down;
                               } else {
                                 icon = Icons.keyboard_arrow_up;
-                                _height = 450;
+                                _height = 380;
                               }
                             });
                           },
@@ -156,7 +157,7 @@ class BookMarkButton extends StatelessWidget {
       right: 40,
       child: CircleAvatar(
         radius: 28,
-        backgroundColor: Colors.yellow[700],
+        backgroundColor: Colors.amber,
         foregroundColor: Colors.white,
         child: Icon(Icons.bookmark),
       ),
@@ -181,7 +182,7 @@ class Organiser extends StatelessWidget {
           ),
         ),
         Text(
-          "Anubhav gupta ",
+          "Anubhav Gupta ",
           style: TextStyle(
             color: Colors.orangeAccent,
             fontSize: 13.0,
@@ -192,12 +193,24 @@ class Organiser extends StatelessWidget {
           size: 12.0,
           color: Colors.cyan,
         ),
-        SizedBox(width: 94),
-        Text(
-          "29 Days Left",
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 13.0,
+        SizedBox(width: 107),
+        RichText(
+          text: TextSpan(
+            text: "29",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 13.0,
+              fontWeight: FontWeight.w500,
+            ),
+            children: <TextSpan>[
+              TextSpan(
+                text: " days left",
+                style: TextStyle(
+                  fontSize: 11.5,
+                  color: Colors.grey,
+                ),
+              ),
+            ],
           ),
         ),
       ],
@@ -217,7 +230,7 @@ class CustomDivider extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Container(
-          width: size.width * 0.47,
+          width: size.width * 0.68,
           height: 3,
           decoration: BoxDecoration(
             color: Colors.orangeAccent,
@@ -271,12 +284,12 @@ class TargetValue extends StatelessWidget {
         Row(
           children: <Widget>[
             Text(
-              "₹240.10",
+              "₹340.10",
               style: TextStyle(fontWeight: FontWeight.w800),
             ),
             Text(
-              "(70%)",
-              style: TextStyle(color: Colors.grey),
+              " (70%)",
+              style: TextStyle(color: Colors.grey, fontSize: 12.0),
             ),
             SizedBox(width: size.width - 180),
             Text(
@@ -300,39 +313,61 @@ class RecentDonors extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Recent donors"),
+        Text(
+          "Recent donors",
+          style: TextStyle(fontWeight: FontWeight.w500),
+        ),
         SizedBox(height: 10.0),
         Row(
           children: <Widget>[
             CircleAvatar(
-              backgroundColor: Colors.red[100],
-              foregroundColor: Colors.black,
-              child: Icon(Icons.person_outline),
+              radius: 22,
+              backgroundColor: Colors.amber[100],
+              // foregroundColor: Colors.black,
+              child: SvgPicture.asset(
+                'assets/svgs/avatar.svg',
+                height: 40.0,
+              ),
             ),
             SizedBox(width: 10.0),
             CircleAvatar(
-              backgroundColor: Colors.red[200],
-              foregroundColor: Colors.black,
-              child: Icon(Icons.person_outline),
+              radius: 22,
+              backgroundColor: Colors.amber[200],
+              // foregroundColor: Colors.black,
+              child: SvgPicture.asset(
+                'assets/svgs/avatar.svg',
+                height: 44.0,
+              ),
             ),
             SizedBox(width: 10.0),
             CircleAvatar(
-              backgroundColor: Colors.red[300],
-              foregroundColor: Colors.black,
-              child: Icon(Icons.person_outline),
+              radius: 22,
+              backgroundColor: Colors.amber[300],
+              // foregroundColor: Colors.black,
+              child: SvgPicture.asset(
+                'assets/svgs/avatar.svg',
+                height: 44.0,
+              ),
             ),
             SizedBox(width: 10.0),
             CircleAvatar(
-              backgroundColor: Colors.red[400],
-              foregroundColor: Colors.black,
-              child: Icon(Icons.person_outline),
+              radius: 22,
+              backgroundColor: Colors.amber[400],
+              // foregroundColor: Colors.black,
+              child: SvgPicture.asset(
+                'assets/svgs/avatar.svg',
+                height: 48.0,
+              ),
             ),
             SizedBox(width: 10.0),
             CircleAvatar(
-              backgroundColor: Colors.red[500],
-              foregroundColor: Colors.black,
-              child: Icon(Icons.person_outline),
-            ),
+                radius: 22,
+                backgroundColor: Colors.orangeAccent,
+                foregroundColor: Colors.white,
+                child: Text(
+                  "99+",
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                )),
             SizedBox(width: 10.0),
           ],
         ),
@@ -359,16 +394,52 @@ class _BuildTabbarState extends State<BuildTabbar>
       indicatorColor: Colors.black,
       indicatorSize: TabBarIndicatorSize.label,
       labelColor: Colors.black,
-      unselectedLabelColor: Colors.grey,
+      unselectedLabelColor: Colors.black,
       tabs: [
         Tab(
           child: Text("Story"),
         ),
         Tab(
-          child: Text("Updates"),
+          child: RichText(
+            text: TextSpan(
+              text: "Updates",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 13.0,
+                fontWeight: FontWeight.w600,
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                  text: " (13)",
+                  style: TextStyle(
+                    fontSize: 10.5,
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
         Tab(
-          child: Text("Comments"),
+          child: RichText(
+            text: TextSpan(
+              text: "Comments",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 13.0,
+                fontWeight: FontWeight.w600,
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                  text: "(69)",
+                  style: TextStyle(
+                    fontSize: 10.5,
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ],
     );
