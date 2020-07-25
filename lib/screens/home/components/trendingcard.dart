@@ -2,20 +2,24 @@ import 'package:fd_app/screens/details/details.dart';
 import 'package:flutter/material.dart';
 
 class TrendingCard extends StatelessWidget {
+  final List image;
   const TrendingCard({
     Key key,
+    this.image,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.43,
+      height: size.width * 0.9,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 3,
+        itemCount: 4,
         itemBuilder: (BuildContext context, int index) {
-          return BuildCard();
+          return BuildCard(
+            image: image[index],
+          );
         },
       ),
     );
@@ -23,8 +27,10 @@ class TrendingCard extends StatelessWidget {
 }
 
 class BuildCard extends StatelessWidget {
+  final String image;
   const BuildCard({
     Key key,
+    this.image,
   }) : super(key: key);
 
   @override
@@ -42,21 +48,21 @@ class BuildCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            height: size.height * 0.33,
-            width: size.width * 0.56,
-            margin: EdgeInsets.only(left: 20.0, top: 15),
+            height: size.width * 0.685,
+            width: size.width * 0.54,
+            margin: EdgeInsets.only(left: 20.0, top: 15.0),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/img2.jpg"),
+                image: AssetImage(image),
                 fit: BoxFit.fill,
               ),
               borderRadius: BorderRadius.circular(30.0),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black26.withOpacity(0.25),
+                  color: Colors.black26.withOpacity(0.23),
                   offset: Offset(1, 3),
-                  blurRadius: 13,
-                  spreadRadius: 3.5,
+                  blurRadius: 10,
+                  spreadRadius: 3,
                 ),
               ],
             ),
@@ -76,21 +82,33 @@ class BuildCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         child: Center(
-                          child: Text(
-                            "29 days left",
-                            style: TextStyle(
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.w500,
+                          child: RichText(
+                            text: TextSpan(
+                              text: "29",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 13.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: " days left",
+                                  style: TextStyle(
+                                    fontSize: 11.5,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
                       ),
                       CircleAvatar(
                         backgroundColor: Colors.white,
-                        // foregroundColor: Colors.black,
+                        foregroundColor: Colors.grey,
                         child: Icon(
                           Icons.bookmark_border,
-                          color: Colors.black,
+                          // color: Colors.black45,
                         ),
                       ),
                     ],
@@ -100,9 +118,11 @@ class BuildCard extends StatelessWidget {
             ),
           ),
           Container(
-              margin: EdgeInsets.only(left: 20.0, top: 8.0),
-              height: size.height * 0.055,
-              width: size.width * 0.54,
+            margin: EdgeInsets.only(left: 20.0, top: 8.0),
+            height: size.height * 0.065,
+            width: size.width * 0.54,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2.5),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -118,7 +138,7 @@ class BuildCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Container(
-                        width: size.width * 0.345,
+                        width: size.width * 0.335,
                         height: 3,
                         decoration: BoxDecoration(
                           color: Colors.orangeAccent,
@@ -157,7 +177,7 @@ class BuildCard extends StatelessWidget {
                               ),
                             ),
                             TextSpan(
-                              text: "(68%)",
+                              text: " (68%)",
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 12.0,
@@ -169,7 +189,9 @@ class BuildCard extends StatelessWidget {
                     ],
                   ),
                 ],
-              )),
+              ),
+            ),
+          ),
         ],
       ),
     );
