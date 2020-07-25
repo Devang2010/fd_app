@@ -7,10 +7,11 @@ class Quote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Center(
       child: Container(
-        height: 340,
-        width: 340,
+        height: size.width * 0.82,
+        width: size.width * 0.82,
         decoration: BoxDecoration(
           color: Colors.orange,
           borderRadius: BorderRadius.circular(220.0),
@@ -27,7 +28,7 @@ class Quote extends StatelessWidget {
             ),
             Positioned(
               top: 50,
-              left: 90,
+              left: 80,
               child: Text(
                 "QUOTE OF THE DAY",
                 style: TextStyle(
@@ -39,7 +40,7 @@ class Quote extends StatelessWidget {
             ),
             Positioned(
               top: 120,
-              left: 75,
+              left: 70,
               child: Text(
                 'And give the relative his'
                 '\nright, and [also] the poor'
@@ -53,7 +54,7 @@ class Quote extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 280,
+              top: 270,
               left: 132,
               child: Text(
                 "[QURAN]",
