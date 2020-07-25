@@ -9,9 +9,10 @@ class EventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.24,
+      height: size.width * 0.61,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.symmetric(vertical: 5.0),
         itemCount: 3,
         itemBuilder: (BuildContext context, int index) {
           return BuildCard();
@@ -30,21 +31,21 @@ class BuildCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      // height: size.height * 0.22,
+      // height: size.width * 0.2,
       width: size.width - 60,
       margin: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0),
-      padding: EdgeInsets.all(20.0),
+      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/img3.jpg"),
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(20.0),
         boxShadow: [
           BoxShadow(
             color: Colors.grey,
             blurRadius: 10.0,
-            spreadRadius: -2,
+            spreadRadius: 0.5,
           ),
         ],
       ),
@@ -64,6 +65,7 @@ class BuildCard extends StatelessWidget {
                 ),
               ),
               FlatButton(
+                // padding: EdgeInsets.symmetric(vertical: 0),
                 onPressed: () {},
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
