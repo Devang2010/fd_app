@@ -17,12 +17,18 @@ class TitlewithButton extends StatelessWidget {
         children: <Widget>[
           Text(
             head,
-            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
+            style: TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: -0.5,
+            ),
           ),
           Text(
             sub,
-            style: TextStyle(fontWeight: FontWeight.w400),
-          )
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+            ),
+          ),
         ],
       ),
     );
