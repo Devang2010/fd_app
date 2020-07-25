@@ -1,0 +1,62 @@
+Hey Anubhav,
+
+Hope you must be in the good of your Health there. I Have Received the Test assignment task completed by you.
+As per our telephonic discussion, I am listing down the changes 
+These are the possible UI Changes Suggestion to make it compliance with the Pinterest module assigned 
+
+Search Bar:  Download similar hamburger icon from flaticons.com ✔
+Search bar text make same as in Pinterest ✔
+search bar size make it sized as per Pinterest ✔
+Trending: spell error, bold  ✔
+More: capitals, try to use font spacing available in text style, ✔
+ Use circle avatar image: The right to search box instead of profile icon ✔
+
+Carousel : 
+: height / width of carousel similar to module : try to use media query ✔
+: Use different image in carousel ✔
+: Richtext : 29days left(day left is in grey ) : size is a little less in height ,  ✔
+: Bookmark icon is grey instead of black ✔
+: proper space between media query b/w -carousel text , carousel progress bar , carousel amount text ✔
+
+Categories : bold ✔
+
+: button use same color using color code (use pick for this) ✔
+: button size / text ✔
+
+
+Inspiring stories : bold ✔
+more  text : same as more that will be refactored above ✔
+
+image different / text different / tag button (once , data should be the text as in module )✔
+
+
+save our ocean movement is a carousel (page indicator is missing / join button gets cut /
+carousel size should be large as in module/ space between join button and text) ✔
+
+
+
+Donate Screen :
+
+make the bottom sheet as in the module 
+bottom sheet be  scrollable to the top as in the module 
+change image behind bottom sheet 
+
+
+Make these changes taking in complete reference from the Pinterest module 
+
+
+
+
+
+
+In case of any concern/query, Please feel free to contact me: 
+
+Thanks & Regards
+
+
+
+	
+Mohit Joshi
+Associate Software Developer | Aeologic Technologies Pvt. Ltd. | Mobility
+phone:  +91 9711331337 (IN)
+site:  www.aeologic.com
