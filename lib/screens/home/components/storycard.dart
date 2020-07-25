@@ -56,7 +56,7 @@ class BuildCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Container(
-            height: size.width * 0.35,
+            height: size.width * 0.33,
             width: size.width * 0.22,
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -67,9 +67,9 @@ class BuildCard extends StatelessWidget {
             ),
           ),
           Container(
-            height: size.width * 0.35,
+            // height: size.width * 0.45,
             width: size.width - 150,
-            padding: EdgeInsets.symmetric(vertical: 10.0),
+            padding: EdgeInsets.only(top: 10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
