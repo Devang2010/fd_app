@@ -40,7 +40,7 @@ class DonateBody extends StatelessWidget {
               ),
             ],
           ),
-          Center(
+          Align(
             child: FlatButton(
               onPressed: () => Navigator.push(
                 context,
@@ -51,7 +51,7 @@ class DonateBody extends StatelessWidget {
               color: Colors.black,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50.0)),
-              padding: EdgeInsets.symmetric(horizontal: 120.0, vertical: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 120.0, vertical: 16.0),
               child: Text(
                 "Donate",
                 style: TextStyle(
