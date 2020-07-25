@@ -33,7 +33,7 @@ class FloatingWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(30.0),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 18.0),
+              padding: EdgeInsets.symmetric(horizontal: 70.0, vertical: 18.0),
               child: Text(
                 "Donate",
                 style: TextStyle(
