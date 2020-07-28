@@ -12,21 +12,13 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
-    List images = [
-      'assets/images/img2.jpg',
-      'assets/images/img1.jpg',
-      'assets/images/moon.jpg',
-      'assets/images/img4.jpg',
-    ];
     return ListView(
       children: <Widget>[
         SizedBox(height: 10.0),
         Buildappbar(),
         SizedBox(height: 10.0),
         TitlewithButton(head: "Trending", sub: "MORE"),
-        TrendingCard(
-          image: images,
-        ),
+        TrendingCard(),
         SizedBox(height: 10.0),
         CategoryTab(),
         SizedBox(height: 20.0),
