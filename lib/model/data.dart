@@ -72,3 +72,30 @@ List<Story> stories = [
     ],
   ),
 ];
+
+class Event {
+  final String image, title;
+  Event({
+    this.image,
+    this.title,
+  });
+}
+
+List<Event> events = [
+  Event(
+    image: 'assets/images/img5.jpg',
+    title: 'Help the Rainforest Recover',
+  ),
+  Event(
+    image: 'assets/images/img1.jpg',
+    title: 'Help this Meusem Recover',
+  ),
+  Event(
+    image: 'assets/images/moon.jpg',
+    title: 'Lets follow the path of moon',
+  ),
+  Event(
+    image: 'assets/images/img4.jpg',
+    title: 'Save our nature',
+  ),
+];
