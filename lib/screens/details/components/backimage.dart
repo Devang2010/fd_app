@@ -11,7 +11,7 @@ class BackImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List images = [
-      'assets/images/img2.jpg',
+      'assets/images/img5.jpg',
       'assets/images/img1.jpg',
       'assets/images/moon1.jpg',
       'assets/images/img4.jpg',
