@@ -1,11 +1,10 @@
+import 'package:fd_app/model/data.dart';
 import 'package:fd_app/screens/details/details.dart';
 import 'package:flutter/material.dart';
 
 class TrendingCard extends StatelessWidget {
-  final List image;
   const TrendingCard({
     Key key,
-    this.image,
   }) : super(key: key);
 
   @override
@@ -15,10 +14,11 @@ class TrendingCard extends StatelessWidget {
       height: size.width * 0.9,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 4,
+        itemCount: events.length,
         itemBuilder: (BuildContext context, int index) {
           return BuildCard(
-            image: image[index],
+            itemIndex: index,
+            event: events[index],
           );
         },
       ),
@@ -27,10 +27,15 @@ class TrendingCard extends StatelessWidget {
 }
 
 class BuildCard extends StatelessWidget {
-  final String image;
+  final int itemIndex;
+  final String image, title;
+  final Event event;
   const BuildCard({
     Key key,
     this.image,
+    this.title,
+    this.itemIndex,
+    this.event,
   }) : super(key: key);
 
   @override
@@ -41,7 +46,9 @@ class BuildCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailScreen(),
+            builder: (context) => DetailScreen(
+              event: events[itemIndex],
+            ),
           ),
         );
       },
@@ -53,7 +60,7 @@ class BuildCard extends StatelessWidget {
             margin: EdgeInsets.only(left: 20.0, top: 15.0),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(image),
+                image: AssetImage(event.image),
                 fit: BoxFit.fill,
               ),
               borderRadius: BorderRadius.circular(30.0),
@@ -128,7 +135,7 @@ class BuildCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    "Help this museum recover",
+                    event.title,
                     style: TextStyle(
                       fontSize: 15.5,
                       fontWeight: FontWeight.w600,
