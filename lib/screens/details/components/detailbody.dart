@@ -1,9 +1,13 @@
+import 'package:fd_app/model/data.dart';
 import 'package:fd_app/screens/details/components/backimage.dart';
 import 'package:fd_app/screens/details/components/floatingwidget.dart';
 import 'package:fd_app/screens/details/components/slideupcontainer.dart';
 import 'package:flutter/material.dart';
 
 class DetailBody extends StatefulWidget {
+  final Event event;
+
+  const DetailBody({Key key, this.event}) : super(key: key);
   @override
   _DetailBodyState createState() => _DetailBodyState();
 }
