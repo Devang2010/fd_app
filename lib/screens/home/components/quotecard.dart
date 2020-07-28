@@ -19,11 +19,11 @@ class Quote extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Positioned(
-              top: 30,
-              left: 12,
-              child: Icon(
-                Icons.beach_access,
-                size: 50.0,
+              top: 35,
+              left: 9,
+              child: Image.asset(
+                'assets/images/quotmark.png',
+                height: 50.0,
               ),
             ),
             Positioned(
@@ -59,7 +59,7 @@ class Quote extends StatelessWidget {
               child: Text(
                 "[QURAN]",
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 14.0,
                   fontWeight: FontWeight.w700,
                 ),
               ),

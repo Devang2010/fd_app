@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 class EventCard extends StatelessWidget {
   const EventCard({
@@ -9,12 +10,18 @@ class EventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.width * 0.61,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(vertical: 5.0),
+      height: size.width * 0.68,
+      child: Swiper(
         itemCount: 3,
-        itemBuilder: (BuildContext context, int index) {
+        loop: false,
+        viewportFraction: 0.9,
+        scale: 0.2,
+        outer: true,
+        scrollDirection: Axis.horizontal,
+        pagination: SwiperPagination(
+          alignment: Alignment.bottomCenter,
+        ),
+        itemBuilder: (context, index) {
           return BuildCard();
         },
       ),
@@ -33,7 +40,7 @@ class BuildCard extends StatelessWidget {
     return Container(
       // height: size.width * 0.2,
       width: size.width - 60,
-      margin: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0),
+      margin: EdgeInsets.only(left: 0.0, top: 10.0, bottom: 10.0),
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
       decoration: BoxDecoration(
         image: DecorationImage(
