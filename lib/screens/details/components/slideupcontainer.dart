@@ -42,6 +42,7 @@ class _SlideUpContainerState extends State<SlideUpContainer> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: SingleChildScrollView(
+                  physics: const NeverScrollableScrollPhysics(),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     // shrinkWrap: true,
@@ -63,6 +64,7 @@ class _SlideUpContainerState extends State<SlideUpContainer> {
                           },
                         ),
                       ),
+                      SizedBox(height: 10.0),
                       GenerWidget(),
                       SizedBox(height: 10.0),
                       Text(
@@ -86,15 +88,24 @@ class _SlideUpContainerState extends State<SlideUpContainer> {
                       TopStory(),
                       SizedBox(height: 30.0),
                       Text(
-                        'Data data data data data data data data data'
-                        'data data data data data data data data data data'
-                        'data data data data data data data data data data'
-                        'data data data data data data data data data data'
-                        'data data data data data data data data data data'
-                        '\n\n\n'
-                        'data data data data data data data data data data'
-                        'data data data data data data data data data data'
-                        'data data data data data data data data data data',
+                        'Rainforests are forests characterized by high and'
+                        'continuous rainfall, with annual rainfall in the'
+                        'case of tropical rainforests between 2.5 and 4.5'
+                        'metres and definitions varying by region for '
+                        'temperate rainforests.\n\n\n'
+                        'Tropical rainforests provide timber as well as '
+                        'animal products such as meat and hides. Rainforests'
+                        'also have value as tourism destinations and for the'
+                        'ecosystem services provided. Many foods originally'
+                        'came from tropical forests, and are still mostly'
+                        'grown on plantations in regions that were formerly'
+                        'primary forest.[29] Also, plant-derived medicines'
+                        'are commonly used for fever, fungal infections, '
+                        'burns, gastrointestinal problems, pain, respiratory'
+                        ' problems, and wound treatment.[30] At the same time,'
+                        'rainforests are usually not used sustainably by'
+                        'non-native peoples but are being exploited or removed'
+                        'for agricultural purposes.',
                       ),
                     ],
                   ),
