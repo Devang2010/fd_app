@@ -31,7 +31,7 @@ class DonateBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                '₹ 0',
+                '₹ 6,000',
                 style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
               ),
               Icon(
@@ -41,6 +41,8 @@ class DonateBody extends StatelessWidget {
             ],
           ),
           Align(
+            heightFactor: 5.6,
+            alignment: Alignment.bottomCenter,
             child: FlatButton(
               onPressed: () => Navigator.push(
                 context,
@@ -53,11 +55,11 @@ class DonateBody extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50.0)),
               padding: EdgeInsets.symmetric(horizontal: 120.0, vertical: 16.0),
               child: Text(
-                "Donate",
+                "Donate ₹6,000",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 17.0,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w300,
                 ),
               ),
             ),
