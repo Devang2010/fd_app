@@ -11,7 +11,7 @@ class DonateScreen extends StatelessWidget {
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back_ios,
-          color: Colors.black,
+          color: Colors.amber,
         ),
         onPressed: () => Navigator.pop(context),
       ),
